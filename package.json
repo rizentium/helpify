@@ -1,0 +1,39 @@
+{
+  "name": "helpify",
+  "version": "1.0.0",
+  "description": "A tiny javascript library",
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "ci": "(npm run test-build && npm run rollup) & npm t & wait",
+    "prepublishOnly": "npm run ci && npm run rollup",
+    "test": "jest",
+    "test-build": "npm run build && node test-build.js",
+    "rollup": "rollup -c",
+    "preversion": "./preversion.sh",
+    "version": "./version.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizentium/helpify.git"
+  },
+  "keywords": [
+    "array",
+    "object",
+    "string",
+    "tools"
+  ],
+  "author": "rizentium@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rizentium/helpify/issues"
+  },
+  "homepage": "https://github.com/rizentium/helpify#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.8",
+    "jest": "^26.2.2",
+    "ts-jest": "^26.1.4",
+    "typescript": "^3.9.7"
+  }
+}
